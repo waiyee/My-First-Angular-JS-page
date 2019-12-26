@@ -1,17 +1,29 @@
-<!DOCTYPE html>  
-<html lang="en">  
-<head>  
-    <meta charset="utf 8">
-    <title>My first Angular Page</title>     
-</head>  
-<body ng-app="app">
-<h1 ng-controller="HelloWorldCtrl">{{message}}</h1>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta chrset="UTF 8">
+	<link rel="stylesheet" href="css/bootstrap.css"/>
+</head>
+<body>
+<h1> My first Angular JS Global Event</h1>
 <script src="https://code.angularjs.org/1.6.9/angular.js"></script>
-<script>  
-    angular.module("app", []).controller("HelloWorldCtrl", function($scope) {  
-    $scope.message="Hello World" 
-    } )
-</script> 
+<script src="lib/angular.min.js"></script>
+<script src="lib/bootstrap.js"></script>
+<script src="lib/jquery-3.4.1.min.js"></script>
 
-</body>  
+<div ng-app="DemoApp" ng-controller="DemoController">
+
+	Tutorial Name : <input type="text" ng-model="tutorialName"><br>
+
+	This tutorial is {{tutorialName}}
+</div>
+<script>
+	var app = angular.module('DemoApp',[]);
+
+	app.controller('DemoController', function($scope){
+	$scope.tutorialName = "Angular JS";
+	});
+</script>
+
+</body>
 </html>
